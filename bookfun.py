@@ -15,7 +15,6 @@ def remove_book_id(book_id):
         if book_id not in existing_data['ID'].values:
             raise ValueError("Książka o podanym ID nie istnieje.")
         updated_data = existing_data[existing_data['ID'] != book_id]
-        print(updated_data)
         updated_data.to_csv('./Library/book.csv', index=False)
         print("Ksiazka zostala pomyslnie usunieta.")
     except FileNotFoundError:
@@ -28,8 +27,7 @@ def remove_book_title(book_title):
         existing_data = pd.read_csv('./Library/book.csv')
         if book_title not in existing_data['TITLE'].values:
             raise ValueError("Książka o podanym tytule nie istnieje.")
-        updated_data = existing_data[existing_data['ID'] != book_title]
-        print(updated_data)
+        updated_data = existing_data[existing_data['TITLE'] != book_title]
         updated_data.to_csv('./Library/book.csv', index=False)
         print("Książka została pomyślnie usunięta.")
     except FileNotFoundError:

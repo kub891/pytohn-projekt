@@ -1,5 +1,6 @@
-ID,STREET,CITY,COUNTRY
-201,Park Avenue,New York,USA
-202,Main Street,Boston,USA
-203,Elm Parkway,Rogers,USA
-204,Lipowa,Bialystok,Poland
+,ID,STREET,CITY,COUNTRY
+0,201,Park Avenue,New York,USA
+1,202,Main Street,Boston,USA
+2,203,Elm Parkway,Rogers,USA
+3,204,Lipowa,Bialystok,Poland
+4,"['6', '1', '0', '5']",ulica,miasto,kraj
