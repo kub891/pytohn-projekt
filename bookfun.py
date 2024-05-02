@@ -9,28 +9,31 @@ def add_book():
     updated_data = pd.concat([existing_data, new_data], ignore_index=True)
     updated_data.to_csv('./Library/book.csv', index=False)
 
-def remove_book_id(book_id):
+def remove_book():
     try:
         existing_data = pd.read_csv('./Library/book.csv')
-        if book_id not in existing_data['ID'].values:
-            raise ValueError("Książka o podanym ID nie istnieje.")
-        updated_data = existing_data[existing_data['ID'] != book_id]
-        updated_data.to_csv('./Library/book.csv', index=False)
-        print("Ksiazka zostala pomyslnie usunieta.")
+        
+        user_input = input("Wprowadź ID książki lub tytuł książki, którą chcesz usunąć: ")
+        try:
+            book_id = int(user_input)
+            if book_id in existing_data['ID'].values:
+                updated_data = existing_data[existing_data['ID'] != book_id]
+                updated_data.to_csv('./Library/book.csv', index=False)
+                print("Książka została pomyślnie usunięta.")
+            else:
+                raise ValueError("Książka o podanym ID nie istnieje.")
+        except ValueError:
+            book_title = user_input
+            if book_title not in existing_data['TITLE'].values:
+                raise ValueError("Książka o podanym tytule nie istnieje.")
+            updated_data = existing_data[existing_data['TITLE'] != book_title]
+            updated_data.to_csv('./Library/book.csv', index=False)
+            print("Książka została pomyślnie usunięta.")
+    
     except FileNotFoundError:
         print("Plik CSV nie został znaleziony.")
+    except ValueError as ve:
+        print("Error:", ve)
     except Exception as e:
-        print("error:", e)
-
-def remove_book_title(book_title):
-    try:
-        existing_data = pd.read_csv('./Library/book.csv')
-        if book_title not in existing_data['TITLE'].values:
-            raise ValueError("Książka o podanym tytule nie istnieje.")
-        updated_data = existing_data[existing_data['TITLE'] != book_title]
-        updated_data.to_csv('./Library/book.csv', index=False)
-        print("Książka została pomyślnie usunięta.")
-    except FileNotFoundError:
-        print("Plik CSV nie został znaleziony.")
-    except Exception as e:
-        print("error:", e)
+        print("Error:", e)
+    

@@ -3,6 +3,4 @@ ID,NAME,E-MAIL,PHONE,CREATED,UPDATED
 202,Mary Smith,mary.smith@example.com,987654321.0,2022-03-15,2018-06-25
 203,Linda Williams,linda.williams@example.com,,2022-08-15,2022-08-21
 204,Robert Kwiatkowski,robert.kwiat@wp.pl,609666999.0,2023-01-15,2023-03-20
-"['5', '9', '3', '7']",marek,marek@op.pl,5124124.0,2024-05-01,2024-05-01
-"['7', '3', '4', '8']",marek,marek@op.pl,5050235.0,2024-05-01,2024-05-01
-"['6', '1', '0', '5']",marcin,marcin@oppl,35235325.0,2024-05-01,2024-05-01
+7327,marcin,marcin@wp.pl,325235325.0,2024-05-02,2024-05-02
