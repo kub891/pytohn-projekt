@@ -40,7 +40,13 @@ def add_book():
     existing_data = pd.read_csv('./Library/book.csv')
     author = input('Podaj Autora: ')
     title = input('Podaj tytul ksiazki: ')
-    pages = int(input('Podaj ilosc stron: '))
+    while True:
+        pages = input('Podaj ilosc stron: ')
+        if(str(pages).isdigit()):
+            if(int(pages) > 0):
+                break
+        print('Ilosc stron musi byc liczba wieksza od 0')
+
     new_data = pd.DataFrame({'ID': [int(existing_data.iloc[-1]['ID'])+1], 'AUTHOR': [author], 'TITLE': [title],'PAGES': [pages], 'CREATED': [date.today()], 'UPDATED': [date.today()]})
     updated_data = pd.concat([existing_data, new_data], ignore_index=True)
     updated_data.to_csv('./Library/book.csv', index=False)
