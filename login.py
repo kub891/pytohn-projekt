@@ -3,10 +3,10 @@ def login():
     correct_password = "admin"
     
     username = input("Podaj login: ")
-    password = input("Podaj hasło: ")
+    password = input("Podaj haslo: ")
     
     if username == correct_username and password == correct_password:
-        print("Zalogowano pomyślnie!")
+        print("Zalogowano pomyslnie!")
         return username
     else:
-        print("Niepoprawny login lub hasło. Spróbuj ponownie.")
+        print("Niepoprawny login lub haslo. Sprobuj ponownie.")
