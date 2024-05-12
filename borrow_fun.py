@@ -1,3 +1,43 @@
+"""
+Modul do zarzadzania wypozyczeniami i zwrotami ksiazek w bibliotece.
+
+Ten modul zawiera funkcje umozliwiajace wypozyczanie oraz zwracanie ksiazek przez klientow
+biblioteki.
+
+Funkcje:
+    - borrow_books(customer_id, book_ids): Pozwala klientowi wypozyczyc jedna lub wiecej ksiazek
+      z biblioteki na podstawie ich identyfikatorow.
+    - return_books(customer_id, returned_book_ids): Pozwala klientowi zwrocic jedna lub wiecej ksiazek
+      do biblioteki na podstawie ich identyfikatorow. Ta funkcja jest dekorowana
+      przez dekorator return_books_decorator, ktory umozliwia zwracanie wielu ksiazek jednoczesnie.
+
+Dekorator:
+    - return_books_decorator: Dekorator uzywany w funkcji return_books do obslugi zwracania wielu ksiazek.
+      Dekorator ten umozliwia sprawdzenie poprawnosci zwrotu ksiazek i zwraca liste zwroconych ksiazek.
+
+Przyklady uzycia:
+    import borrow_fun
+
+    Aby wypozyczyc ksiazki, nalezy wywolac funkcje borrow_books(customer_id, book_ids),
+    podajac ID klienta i liste identyfikatorow ksiazek do wypozyczenia.
+
+    borrow_fun.borrow_books('123')
+
+    Aby zwrocic ksiazki, nalezy wywolac funkcje return_books(customer_id, returned_book_ids),
+    podajac ID klienta i liste identyfikatorow ksiazek do zwrotu.
+
+    borrow_fun.return_books('123')
+
+Wymagane moduly:
+    os
+    pandas
+    datetime
+"""
+
+
+
+
+
 import os
 import pandas as pd
 from datetime import date
@@ -46,7 +86,7 @@ def return_books(customer_id, returned_book_id):
     except Exception as e:
         print("Wystapil blad podczas zwracania ksiazek:", e)
 
-
+#dekorator
 def return_books_decorator(func):
     def return_books(customer_id, returned_book_ids):
         try:

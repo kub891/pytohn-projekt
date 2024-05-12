@@ -1,3 +1,39 @@
+"""
+Modul do zarzadzania ksiazkami w bibliotece.
+
+Ten modul zawiera funkcje umozliwiajace dodawanie nowych ksiazek do biblioteki
+oraz usuwanie istniejacych ksiazek z biblioteki.
+
+Funkcje:
+    - add_book(): Pozwala uzytkownikowi dodac nowa ksiazke do biblioteki.
+    - remove_book(): Pozwala uzytkownikowi usunac istniejaca ksiazke z biblioteki,
+                     przy uzyciu ID ksiazki lub tytulu ksiazki.
+
+Przyklady uzycia:
+    import bookfun
+
+    Aby dodac nowa ksiazke, nalezy wywolac funkcje add_book(). Zostaniesz poproszony
+    o podanie autora, tytulu i liczby stron ksiazki.
+
+    bookfun.add_book()
+    
+    Aby usunac ksiazke, nalezy wywolac funkcje remove_book(). Nastepnie zostaniesz poproszony
+    o podanie ID ksiazki lub tytulu ksiazki, ktora chcesz usunac.
+
+    bookfun.remove_book()
+
+Wymagane moduly:
+    datetime
+    pandas
+"""
+
+
+
+
+
+
+
+
 from datetime import date
 import pandas as pd
 def add_book():
